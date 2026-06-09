@@ -264,9 +264,9 @@ function PantallaCrearPerfil({ perfil, onSave, onBack }) {
       <h2 style={{margin:"0 0 4px",fontSize:"22px"}}>{perfil?"Editar perfil":"Crear perfil"}</h2>
       <p style={{color:"#555",fontSize:"13px",margin:"0 0 28px"}}>Completá tus datos</p>
       <div style={{display:"flex",flexDirection:"column",gap:"16px",maxWidth:"480px"}}>
-        {inp("NOMBRE *", nombre, setNombre, "Ej: Guido")}
-        {inp("OBJETIVO", objetivo, setObjetivo, "Ej: Bajar grasa y ganar músculo")}
-        {inp("LESIONES O LIMITACIONES", lesion, setLesion, "Ej: Tendinitis rodilla derecha")}
+       {inp("NOMBRE *", nombre, setNombre, "Ej: Juan Pérez")}
+{inp("OBJETIVO", objetivo, setObjetivo, "Ej: Ganar masa muscular")}
+{inp("LESIONES O LIMITACIONES", lesion, setLesion, "Ej: Dolor lumbar o lesión de rodilla")}
         <div>
           <div style={{fontSize:"11px",color:"#555",fontFamily:"monospace",letterSpacing:"1px",marginBottom:"10px"}}>COLOR</div>
           <div style={{display:"flex",gap:"10px"}}>
