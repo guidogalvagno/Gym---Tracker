@@ -259,13 +259,6 @@ const [equipamiento, setEquipamiento] = useState(perfil?.equipamiento||"");
   color,
   lesion:lesion.trim(),
 
-  edad,
-  peso,
-  altura,
-  nivel,
-  dias,
-  equipamiento,
-
   rutina:perfil?.rutina||[],
   historial:perfil?.historial||{},
   fotos:perfil?.fotos||[],
