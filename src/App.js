@@ -244,13 +244,33 @@ function PantallaCrearPerfil({ perfil, onSave, onBack }) {
   const [objetivo, setObjetivo] = useState(perfil?.objetivo||"");
   const [color, setColor] = useState(perfil?.color||COLORES[0]);
   const [lesion, setLesion] = useState(perfil?.lesion||"");
+  const [edad, setEdad] = useState(perfil?.edad||"");
+const [peso, setPeso] = useState(perfil?.peso||"");
+const [altura, setAltura] = useState(perfil?.altura||"");
+const [nivel, setNivel] = useState(perfil?.nivel||"");
+const [dias, setDias] = useState(perfil?.dias||"");
+const [equipamiento, setEquipamiento] = useState(perfil?.equipamiento||"");
   const ok = nombre.trim().length > 0;
   const guardar = () => {
     if (!ok) return;
-    onSave({ nombre:nombre.trim(), objetivo:objetivo.trim(), color, lesion:lesion.trim(),
-      rutina:perfil?.rutina||[], historial:perfil?.historial||{},
-      fotos:perfil?.fotos||[], recordatorios:perfil?.recordatorios||{} });
-  };
+  onSave({
+  nombre:nombre.trim(),
+  objetivo:objetivo.trim(),
+  color,
+  lesion:lesion.trim(),
+
+  edad,
+  peso,
+  altura,
+  nivel,
+  dias,
+  equipamiento,
+
+  rutina:perfil?.rutina||[],
+  historial:perfil?.historial||{},
+  fotos:perfil?.fotos||[],
+  recordatorios:perfil?.recordatorios||{}
+});
   const inp = (label, val, set, ph) => (
     <div>
       <div style={{fontSize:"11px",color:"#555",fontFamily:"monospace",letterSpacing:"1px",marginBottom:"6px"}}>{label}</div>
@@ -265,7 +285,13 @@ function PantallaCrearPerfil({ perfil, onSave, onBack }) {
       <p style={{color:"#555",fontSize:"13px",margin:"0 0 28px"}}>Completá tus datos</p>
       <div style={{display:"flex",flexDirection:"column",gap:"16px",maxWidth:"480px"}}>
        {inp("NOMBRE *", nombre, setNombre, "Ej: Juan Pérez")}
+{inp("EDAD", edad, setEdad, "Ej: 24")}
+{inp("PESO (kg)", peso, setPeso, "Ej: 98")}
+{inp("ALTURA (cm)", altura, setAltura, "Ej: 174")}
 {inp("OBJETIVO", objetivo, setObjetivo, "Ej: Ganar masa muscular")}
+{inp("NIVEL", nivel, setNivel, "Principiante / Intermedio / Avanzado")}
+{inp("DÍAS DISPONIBLES", dias, setDias, "Ej: 4")}
+{inp("EQUIPAMIENTO", equipamiento, setEquipamiento, "Gym completo / Casa")}
 {inp("LESIONES O LIMITACIONES", lesion, setLesion, "Ej: Dolor lumbar o lesión de rodilla")}
         <div>
           <div style={{fontSize:"11px",color:"#555",fontFamily:"monospace",letterSpacing:"1px",marginBottom:"10px"}}>COLOR</div>
