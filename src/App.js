@@ -986,7 +986,7 @@ export default function App() {
   const [appData, setAppData] = useState({ perfiles:[] });
   const [pantalla, setPantalla] = useState("perfiles");
   const [pidx, setPidx] = useState(null);
-}
+
   useEffect(()=>{ setAppData(load()); },[]);
 
   const save = (newData) => { persist(newData); setAppData(newData); };
