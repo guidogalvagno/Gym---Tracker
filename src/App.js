@@ -271,6 +271,7 @@ const [equipamiento, setEquipamiento] = useState(perfil?.equipamiento||"");
   fotos:perfil?.fotos||[],
   recordatorios:perfil?.recordatorios||{}
 });
+  };
   const inp = (label, val, set, ph) => (
     <div>
       <div style={{fontSize:"11px",color:"#555",fontFamily:"monospace",letterSpacing:"1px",marginBottom:"6px"}}>{label}</div>
